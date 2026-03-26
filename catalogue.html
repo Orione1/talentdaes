@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Talents Certifiés | TalentAES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --primary: #004d40; 
+            --secondary: #ffc107; 
+            --dark: #1a1a1a; 
+            --light: #f9f9f9; 
+            --white: #ffffff;
+            --success: #2ecc71;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--dark); background: var(--light); line-height: 1.6; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        header { background: var(--primary); color: var(--white); padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--secondary); }
+        header h1 { font-size: 2.2rem; margin: 10px 0; }
+        
+        .nav-back { text-align: left; margin-bottom: 20px; }
+        .nav-back a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+        .catalogue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        
+        .talent-card { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 6px solid var(--secondary); position: relative; }
+        .talent-card h3 { color: var(--primary); margin-top: 0; font-size: 1.4rem; }
+        .status-badge { background: #e8f5e9; color: var(--success); padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 15px; }
+        
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .info-label { font-weight: 600; color: #666; }
+        
+        .btn-view { display: block; background: var(--primary); color: white; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; margin-top: 20px; font-weight: 600; }
+        
+        footer { background: var(--dark); color: white; text-align: center; padding: 30px; margin-top: 60px; font-size: 0.9rem; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Talents Certifiés Disponibles</h1>
+        <p>Profils vérifiés physiquement par TalentAES au Sahel.</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="nav-back">
+        <a href="index.html">← Retour à l'accueil</a>
+    </div>
+
+    <div class="catalogue-grid">
+        <div class="talent-card">
+            <span class="status-badge">✓ CERTIFIÉ</span>
+            <h3>Opérateur de Jumbo (Mines)</h3>
+            <div class="info-row"><span class="info-label">Expérience:</span> <span>7 ans</span></div>
+            <div class="info-row"><span class="info-label">Localisation:</span> <span>Burkina Faso</span></div>
+            <div class="info-row"><span class="info-label">Disponibilité:</span> <span>Immédiate</span></div>
+            <a href="mailto:recrutement@talentaes.com?subject=Demande CV - ID:001" class="btn-view">Demander le CV complet</a>
+        </div>
+
+        <div class="talent-card">
+            <span class="status-badge">✓ CERTIFIÉ</span>
+            <h3>Conducteur SPL (Logistique)</h3>
+            <div class="info-row"><span class="info-label">Expérience:</span> 12 ans</span></div>
+            <div class="info-row"><span class="info-label">Localisation:</span> <span>Niger</span></div>
+            <div class="info-row"><span class="info-label">Disponibilité:</span> <span>Sous 15 jours</span></div>
+            <a href="mailto:recrutement@talentaes.com?subject=Demande CV - ID:002" class="btn-view">Demander le CV complet</a>
+        </div>
+
+        <div class="talent-card">
+            <span class="status-badge">✓ CERTIFIÉ</span>
+            <h3>Technicien Maintenance</h3>
+            <div class="info-row"><span class="info-label">Expérience:</span> 4 ans</span></div>
+            <div class="info-row"><span class="info-label">Localisation:</span> <span>Mali</span></div>
+            <div class="info-row"><span class="info-label">Disponibilité:</span> <span>Immédiate</span></div>
+            <a href="mailto:recrutement@talentaes.com?subject=Demande CV - ID:003" class="btn-view">Demander le CV complet</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 TalentAES - Le Talent n'a pas de Frontières.
+</footer>
+
+</body>
+</html>
