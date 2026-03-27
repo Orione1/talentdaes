@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: TON_PSEUDO_GITHUB/TON_NOM_DE_DEPOT # Exemple: Orione/talentdaes
+  branch: main
+
+media_folder: "images/uploads" # Où seront stockées les photos
+public_folder: "/images/uploads"
+
+collections:
+  - name: "emplois"
+    label: "Offres d'Emploi"
+    folder: "_emplois" # Les annonces seront créées ici
+    create: true
+    fields:
+      - {label: "Titre de l'offre", name: "title", widget: "string"}
+      - {label: "Image de l'annonce", name: "image", widget: "image"}
+      - {label: "Secteur", name: "secteur", widget: "select", options: ["Mines", "BTP", "Logistique", "Services"]}
+      - {label: "Lieu", name: "lieu", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  - name: "talents"
+    label: "Catalogue Talents"
+    folder: "_talents"
+    create: true
+    fields:
+      - {label: "Nom du Candidat", name: "title", widget: "string"}
+      - {label: "Photo de profil", name: "photo", widget: "image"}
+      - {label: "Certifié ?", name: "certifie", widget: "boolean", default: false}
+      - {label: "Métier", name: "metier", widget: "string"}
+      - {label: "Description/Avis", name: "body", widget: "markdown"}
