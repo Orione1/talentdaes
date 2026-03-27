@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentAES | Le Recrutement Certifié au Sahel (Burkina, Mali, Niger)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --primary: #004d40; /* Vert émeraude profond */
+            --secondary: #ffc107; /* Jaune ambre */
+            --dark: #1a1a1a; 
+            --light: #f9f9f9; 
+            --white: #ffffff;
+            --success: #2ecc71;
+            --error: #e74c3c;
+        }
+        
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--dark); background: var(--light); line-height: 1.6; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        header { background: var(--primary); color: var(--white); padding: 80px 20px; text-align: center; border-bottom: 5px solid var(--secondary); }
+        header h1 { font-size: 2.8rem; margin: 10px 0; font-weight: 700; }
+        header p { font-size: 1.2rem; max-width: 700px; margin: auto; opacity: 0.9; }
+        .badge-verified { background: var(--secondary); color: var(--dark); padding: 8px 20px; border-radius: 25px; font-weight: 600; font-size: 0.95rem; display: inline-block; margin-bottom: 15px; }
+
+        .main-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: -50px; }
+        .card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #eee; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h2 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
+        
+        .btn { display: inline-block; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; text-align: center; transition: 0.3s; width: 100%; border: none; cursor: pointer; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-primary:hover { background: #003d33; }
+        .btn-secondary { background: var(--secondary); color: var(--dark); }
+        .btn-secondary:hover { background: #e6ac00; }
+        .card .btn { margin-bottom: 15px; }
+
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary); }
+        input, select { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+        
+        .section-title { text-align: center; margin-top: 80px; margin-bottom: 40px; color: var(--primary); font-size: 2.2rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+        .feature-item { background: var(--white); padding: 30px; border-radius: 8px; border: 1px solid #eee; }
+
+        footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 50px 20px; margin-top: 80px; font-size: 0.95rem; }
+        #notification { position: fixed; top: 20px; right: 20px; padding: 15px 25px; border-radius: 8px; color: white; display: none; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .notif-success { background-color: var(--success); }
+        @media (max-width: 600px) { header h1 { font-size: 2rem; } .main-grid { margin-top: 20px; } }
+    </style>
+</head>
+<body>
+
+<div id="notification"></div>
+
+<header>
+    <div class="container">
+        <span class="badge-verified">✓ Système de Certification Unique au Sahel</span>
+        <h1>Le Talent n'a pas de Frontières.</h1>
+        <p>Mise en relation directe entre entreprises et travailleurs certifiés du Burkina, Mali et Niger.</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="main-grid">
+        <div class="card" id="candidat-card">
+            <h2>Candidats</h2>
+            <p>Inscrivez-vous pour accéder aux offres exclusives. Les profils certifiés apparaissent en priorité.</p>
+            
+            <form id="candidatForm">
+                <div class="form-group">
+                    <label>Nom complet</label>
+                    <input type="text" id="nom" required placeholder="Ex: Jean Moussa Traoré">
+                </div>
+                <div class="form-group">
+                    <label>Numéro WhatsApp</label>
+                    <input type="tel" id="whatsapp" required placeholder="Ex: +226 70 00 00 00">
+                </div>
+                <div class="form-group">
+                    <label>Secteur d'activité</label>
+                    <select id="secteur" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="Mines">Mines & Carrières</option>
+                        <option value="BTP">BTP & Construction</option>
+                        <option value="Logistique">Logistique & Transport</option>
+                        <option value="Maintenance">Maintenance Industrielle</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">S'INSCRIRE & VOIR LES OFFRES</button>
+            </form>
+            <div style="text-align: center; margin: 15px 0; color: #666;">OU</div>
+            <a href="https://ton-lien-de-paiement.com" class="btn btn-secondary" target="_blank">Certifier mon Profil (2 500 FCFA)</a>
+        </div>
+
+        <div class="card">
+            <h2>Entreprises</h2>
+            <p>Accédez à notre base de données de talents vérifiés ou publiez vos besoins en 48h.</p>
+            <a href="catalogue.html" class="btn btn-primary">Consulter le Catalogue Talents</a>
+            <a href="https://wa.me/22669270750?text=Bonjour TalentAES, je souhaite publier une offre d'emploi" class="btn btn-secondary">Publier une Offre (Validation 24h)</a>
+            <div style="margin-top: 20px; font-size: 0.9rem; color: #555; background: #f0f0f0; padding: 15px; border-radius: 6px;">
+                <strong>Vérification Orione :</strong> Diplômes et compétences testés avant certification.
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Comment ça marche ?</h2>
+    <div class="features-grid">
+        <div class="feature-item"><h3>1. Inscription</h3><p>Remplissez vos infos et envoyez votre CV par WhatsApp.</p></div>
+        <div class="feature-item"><h3>2. Certification</h3><p>Paiement des frais et vérification physique de votre dossier.</p></div>
+        <div class="feature-item"><h3>3. Emploi</h3><p>Votre profil est mis en avant auprès des recruteurs du Sahel.</p></div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <strong>TalentAES</strong> - Siège : Ouagadougou, Burkina Faso.<br>
+        &copy; 2026. Propulsé par la Vision Orione.
+    </div>
+</footer>
+
+<script>
+    const form = document.getElementById('candidatForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const notification = document.getElementById('notification');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Envoi...';
+        
+        const nom = document.getElementById('nom').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const secteur = document.getElementById('secteur').value;
+
+        const monNumero = "22669270750"; // REMPLACE PAR TON NUMÉRO
+        const message = `Nouvelle Inscription TalentAES :%0A- Nom : ${nom}%0A- WhatsApp : ${whatsapp}%0A- Secteur : ${secteur}`;
+
+        showNotification('Profil enregistré ! Redirection vers les offres...', 'success');
+        
+        // On ouvre WhatsApp dans un nouvel onglet pour que l'utilisateur garde le site ouvert
+        window.open(`https://wa.me/${monNumero}?text=${message}`, '_blank');
+
+        // On redirige la page actuelle vers les offres d'emploi
+        setTimeout(() => {
+            window.location.href = "emplois.html";
+        }, 2000);
+    });
+
+    function showNotification(message, type) {
+        notification.innerText = message;
+        notification.className = 'notif-success';
+        notification.style.display = 'block';
+    }
+</script>
+</body>
+</html>
