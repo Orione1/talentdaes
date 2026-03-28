@@ -1,0 +1,93 @@
+/* =========================================
+   STYLE MODERNE & FUTURISTE - TALENT AES
+   ========================================= */
+
+:root {
+  --primary: #00d2ff;    /* Bleu électrique */
+  --secondary: #3a7bd5;  /* Bleu profond */
+  --dark-bg: #0f172a;    /* Fond nuit moderne */
+  --card-bg: rgba(255, 255, 255, 0.05); /* Effet verre */
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Fond du site avec un dégradé élégant */
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background-attachment: fixed; /* Le fond reste fixe au défilement */
+  color: #f8fafc;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titres futuristes avec effet de dégradé sur le texte */
+h1, h2, .titre-annonce {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #00d2ff, #92fe9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* --- CARTES D'ANNONCES & TALENTS (EFFET GLASSMORPHISM) --- */
+.card, .offre-item, .talent-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px); /* Effet flou derrière la carte */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--primary); /* Barre lumineuse latérale */
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animation au survol des cartes */
+.card:hover, .offre-item:hover, .talent-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
+  border: 1px solid var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* --- BOUTONS FUTURISTES --- */
+button, .btn, .cta-button {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 12px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Mise en forme des petits textes d'infos (Lieu, Métier) */
+.info-label {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Adaptabilité Mobile */
+@media (max-width: 768px) {
+  .card, .offre-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
